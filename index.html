@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self' data: blob:; connect-src 'self' data: blob:; worker-src 'self' blob:; manifest-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Equation Solver — Linear, Quadratic, Cubic &amp; Systems with Steps | S3eidat Tools</title>
+<meta name="description" content="Solve linear, quadratic (with discriminant and complex roots) and cubic equations, and 2×2 or 3×3 linear systems by Gaussian elimination, with exact fractions and every step shown. Free and private.">
+<meta property="og:title" content="Equation Solver — exact answers with steps">
+<meta property="og:description" content="Linear, quadratic, cubic and 3×3 systems. Runs 100% in your browser.">
+<link rel="icon" href="kit/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="kit/kit.css">
+<link rel="stylesheet" href="app.css">
+<script src="kit/kit.js"></script>
+<!--s3:seo-->
+<link rel="canonical" href="https://s3eidat.github.io/equation-solver/">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0d0f12">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="S3eidat Tools">
+<meta property="og:url" content="https://s3eidat.github.io/equation-solver/">
+<meta property="og:image" content="https://s3eidat.github.io/equation-solver/screenshot.png">
+<meta property="og:image:width" content="1280"><meta property="og:image:height" content="800">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Equation Solver — Solve linear, quadratic and systems">
+<meta name="twitter:description" content="Solve linear, quadratic and systems. Free, private and runs 100% in your browser: no sign-up, no uploads.">
+<meta name="twitter:image" content="https://s3eidat.github.io/equation-solver/screenshot.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Equation Solver", "url": "https://s3eidat.github.io/equation-solver/", "description": "Solve linear, quadratic and systems. Free, private and runs 100% in your browser: no sign-up, no uploads.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (web browser)", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "image": "https://s3eidat.github.io/equation-solver/screenshot.png", "author": {"@type": "Person", "name": "s3eidat", "url": "https://github.com/s3eidat"}}</script>
+<!--/s3:seo-->
+</head>
+<body data-tool="equation-solver">
+<main class="s3-main">
+  <section class="s3-hero">
+    <h1>Equation Solver</h1>
+    <p>Enter the coefficients and get exact answers (fractions and square roots, not just decimals) with the working shown. Coefficients can be whole numbers, decimals or fractions like 3/4.</p>
+  </section>
+
+  <div class="seg es-tabs" id="tabs" role="group" aria-label="Equation type">
+    <button type="button" data-v="lin" aria-pressed="false">Linear</button>
+    <button type="button" data-v="quad" aria-pressed="true">Quadratic</button>
+    <button type="button" data-v="cubic" aria-pressed="false">Cubic</button>
+    <button type="button" data-v="sys2" aria-pressed="false">2 × 2 system</button>
+    <button type="button" data-v="sys3" aria-pressed="false">3 × 3 system</button>
+  </div>
+
+  <section class="card mt">
+    <div class="row between">
+      <h2 id="formTitle">Equation</h2>
+      <div class="row">
+        <button class="btn ghost small" type="button" id="example">Example</button>
+        <button class="btn ghost small" type="button" id="clear"><svg class="i"><use href="#i-trash"/></svg>Clear</button>
+      </div>
+    </div>
+    <div id="form" class="eq-form" dir="ltr"></div>
+    <p class="faint eq-p" id="preview" dir="ltr"></p>
+  </section>
+
+  <div class="eq-grid mt">
+    <section class="card">
+      <div class="row between">
+        <h2>Solution</h2>
+        <button class="btn ghost small" type="button" id="copy"><svg class="i"><use href="#i-copy"/></svg>Copy</button>
+      </div>
+      <div id="result" class="eq-result" aria-live="polite"></div>
+    </section>
+    <section class="card">
+      <h2>Steps</h2>
+      <ol id="steps" class="eq-steps"></ol>
+    </section>
+  </div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
